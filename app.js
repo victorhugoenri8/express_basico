@@ -8,7 +8,7 @@ const path = require("path");
 
 //handlebars
 app.set('view engine', 'hbs');
-hbs.registerPartials(__dirname + '/views/parciales', function (err) {});
+hbs.registerPartials(__dirname + '/views/parciales');
 
 
 //middelwere
@@ -21,6 +21,21 @@ app.get('/', function (req, res) {
         titulo: "Estudio Guitarron"
     });
 });
+
+app.get('/elements', function (req, res) {
+    res.render("elements", {
+        nombre: "victor Hugo",
+        titulo: "Estudio Guitarron"
+    });
+});
+
+app.get('/generic', function (req, res) {
+    res.render("generic", {
+        nombre: "victor Hugo",
+        titulo: "Estudio Guitarron"
+    });
+});
+
 
 //para que funcione con las url de sendFile ocupa el path.join... hay que insalar npm i path
 // app.get('/home', function (req, res) {
